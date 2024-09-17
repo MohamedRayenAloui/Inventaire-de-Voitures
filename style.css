@@ -1,0 +1,141 @@
+body > h1{
+    text-align: center;
+}
+
+button,input,select{
+    border:none;
+    background:none;
+}
+
+i{
+    vertical-align: middle;
+}
+
+i:not([class*="fa-chevron"]){
+    margin-left:4px;
+}
+
+/* ############################ Partie 1 ############################################*/
+#partie1{
+    width:98%;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    padding:2%;
+}
+
+/* subdivision partie 1*/
+#partie1 > div{
+    flex:1;
+    padding:2%;
+    max-width:50%;
+}
+
+/* ------------- Carousselle ---------------*/
+#carousselle div{
+    display:flex;
+}
+
+#carousselle div img{
+    flex:4;
+    height:auto;
+    max-width:80%;
+} 
+
+#carousselle div button{
+    flex:1;
+}
+
+#carousselle p{
+    text-align: center;
+}
+
+#carousselle p *:not(input){
+    display: inline-block;
+    width:20%;
+}
+/*-------------- infos ----------------*/ 
+
+
+/* fonctionalites */
+
+.fonctionalites{
+    text-align: right;
+}
+
+.fonctionalites button{
+    padding:2%;
+    font-size: 1.1em;
+}
+
+#btnSaveChange,#btnCancelChange{
+    display: none; /* cacher */
+}
+
+/* formulaire */
+form{
+    padding:5%;
+}
+
+form > *{
+    display: inline-block;
+    vertical-align: top;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+form > label:not([id="options"]){
+    width:47%;
+}
+
+form input:not([type="checkbox"]){
+    max-width: 50%;
+}
+
+form select{
+    max-width:40%;
+}
+
+/* les options */ 
+#options,#options2{
+    max-width: 10%;
+}
+
+form > span{
+    max-width: 30%;
+}
+
+form .special > label{
+   display:none;
+}
+
+/* les options aux moment des modification */
+.normal label{
+    display:block;
+}
+
+
+
+/* #################################### partie 2 ######################################## */
+
+#partie2{
+    display: none; /* cacher */
+    width:70%;
+    margin:auto;
+    position:absolute;
+    top:10%;
+    left:10%;
+    background-color: white;
+    border:1px solid black;
+    padding:5%;
+}
+
+@media (max-width:1000px){
+    #partie1{
+        flex-direction: column;
+    }
+
+    #partie1 div{
+        min-width:100%;
+    }
+}

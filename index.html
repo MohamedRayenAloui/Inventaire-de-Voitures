@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>  Inventaire de voitures </title>
+</head>
+<body>
+    <h1> Inventaire de voitures </h1>
+
+    <!-- Partie 1 pour Afficher et modifier les voitures-->
+    <div id="partie1">
+
+        <!-- Carousselle affichant les images des voitures et permettant de changer de voiture -->
+        <div id="carousselle">
+            
+            <div>
+                <button id="btnPrevious">
+                    <i class="fas fa-chevron-left"></i>
+                   
+                </button>
+
+                <img alt="image de voiture" id="imageVoiture">
+
+                <button id="btnNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <p> 
+                <span>Trié par :</span>
+                <label>
+                    <input type="radio" name="trie" value="Annee" id="radioTrierAnnee">
+                    Année</label> 
+                <label> 
+                    <input type="radio" name="trie" value="Annee" id="radioTrierMarque">
+                    Marque</label>
+            </p>
+
+        </div>
+
+        <!-- Affichage des infos des voiture et modification -->
+        <div id="infos">
+
+            
+
+            <div class="fonctionalites">
+
+                <button class="apparaitPourModifier" id="btnSaveChange">
+                    Sauvegarder
+                    <i class="fas fa-save"></i>
+                </button>
+                    
+                <button class="apparaitPourModifier" id="btnCancelChange">
+                    Annuler
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <button id="btnModify">
+                    Modifier
+                    <i class="fas fa-edit"></i>
+                </button>
+
+            </div>
+
+        
+
+            <!-- formulaire affichant modifiant les infos-->
+            <form id="modification">
+
+                <label for="marque">Marque:
+                    <input type="text" id="marque" name="Marque" placeholder="Entrez la marque" required disabled> </label>
+
+                <label for="transmission">Transmission:
+                    <select type="select" id="transmission" name="Transmission" required disabled>
+                        <option value="Manuelle">Manuelle</option>
+                        <option value="Automatique">Automatique</option>
+                    </select> </label>
+             
+                <label for="modele">Modèle:
+                    <input type="text" id="modele" name="Modele" placeholder="Entrez le modèle" required disabled> </label>
+
+                <label for="couleur">Couleur:
+                    <input type="text" id="couleur" name="Couleur" placeholder="Entrez la couleur" required disabled> </label>
+             
+                <label for="annee">Année:
+                    <input type="number" id="annee" name="Annee" min="1960" max="2024" placeholder="Entrez l'année" required disabled> </label>
+                
+                <label id="options">Options:</label>
+
+                <span class="special">
+
+                    <span id="optionsEnText"> </span>
+
+                    <label for="AirConditionne2"> 
+                        <input type="checkbox" id="AirConditionne2" name="AirConditionne" value="Climatisation">
+                        Climatisation </label>
+    
+                    <label for="Cuir2"> 
+                            <input type="checkbox" id="Cuir2" name="Cuir" value="Siege en cuir">
+                            Sièges en cuir </label>
+                    
+                    <label for="GPS2"> 
+                            <input type="checkbox" id="GPS2" name="GPS" value="Système de navigation GPS">
+                            Système de navigation GPS </label>
+                    
+                    <label for="ToitOuvrant2"> 
+                            <input type="checkbox" id="ToitOuvrant2" name="ToitOuvrant" value="Toit ouvrant">
+                            Toit ouvrant </label>
+    
+                    <label for="Bluetooth2"> 
+                            <input type="checkbox" id="Bluetooth2" name="Bluetooth" value="Connectivité Bluetooth">
+                            Connectivité Bluetooth </label>    
+                            
+                    <label for="CameraDeRecul2"> 
+                            <input type="checkbox" id="CameraDeRecul2" name="CameraDeRecul" value="Caméra de recul">
+                            Caméra de recul </label> 
+    
+                    <label for="SiegesChauffants2"> 
+                            <input type="checkbox" id="SiegesChauffants2" name="SiegesChauffants" value="Sièges chauffants">
+                            Sièges chauffants </label>
+    
+                    <label for="ControleDeStabilite2"> 
+                            <input type="checkbox" id="ControleDeStabilite2" name="ControleDeStabilite" value="Contrôle de stabilité">
+                            Contrôle de stabilité </label>
+    
+                    <label for="VitresElectriques2"> 
+                            <input type="checkbox" id="VitresElectriques2" name="VitresElectriques" value="Vitres électriques">
+                            Vitres électriques </label>
+    
+                    <label for="AssistanceAuStationnement2"> 
+                            <input type="checkbox" id="AssistanceAuStationnement2" name="AssistanceAuStationnement" value="Assistance au stationnement">
+                            Assistance au stationnement </label>
+
+                </span> 
+
+                <label for="url">Image:
+                    <input type="url" id="url" name="URL" placeholder="Entrez l'année" required disabled> </label>
+
+            </form>
+            <div class="fonctionalites">
+                <button id="btnNew">
+                    Nouvelle Voiture
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="partie2">
+        <form id="ajout">
+
+            <label for="marque2">Marque:
+                <input type="text" id="marque2" name="Marque" placeholder="Entrez la marque" required> </label>
+
+            <label for="transmission2">Transmission:
+                <select id="transmission2" name="Transmission">
+                    <option value="manuelle">Manuelle</option>
+                    <option value="automatique">Automatique</option>
+                </select> </label>
+         
+            <label for="modele2">Modèle:
+                <input type="text" id="modele2" name="Modele" placeholder="Entrez le modèle" required> </label>
+
+            <label for="couleur2">Couleur:
+                <input type="text" id="couleur2" name="Couleur" placeholder="Entrez la couleur" required> </label>
+         
+            <label for="annee2">Année:
+                <input type="number" id="annee2" name="Annee" min="1996" max="2024" placeholder="Entrez l'année" required> </label>
+            
+            <label id="options2">Options:</label>
+            
+            <span class="normal">
+
+                <label for="AirConditionne2"> 
+                    <input type="checkbox" id="AirConditionne2" name="AirConditionne" value="Climatisation">
+                    Climatisation </label>
+
+                <label for="Cuir2"> 
+                        <input type="checkbox" id="Cuir2" name="Cuir" value="Siege en cuir">
+                        Sièges en cuir </label>
+                
+                <label for="GPS2"> 
+                        <input type="checkbox" id="GPS2" name="GPS" value="Système de navigation GPS">
+                        Système de navigation GPS </label>
+                
+                <label for="ToitOuvrant2"> 
+                        <input type="checkbox" id="ToitOuvrant2" name="ToitOuvrant" value="Toit ouvrant">
+                        Toit ouvrant </label>
+
+                <label for="Bluetooth2"> 
+                        <input type="checkbox" id="Bluetooth2" name="Bluetooth" value="Connectivité Bluetooth">
+                        Connectivité Bluetooth </label>    
+                        
+                <label for="CameraDeRecul2"> 
+                        <input type="checkbox" id="CameraDeRecul2" name="CameraDeRecul" value="Caméra de recul">
+                        Caméra de recul </label> 
+
+                <label for="SiegesChauffants2"> 
+                        <input type="checkbox" id="SiegesChauffants2" name="SiegesChauffants" value="Sièges chauffants">
+                        Sièges chauffants </label>
+
+                <label for="ControleDeStabilite2"> 
+                        <input type="checkbox" id="ControleDeStabilite2" name="ControleDeStabilite" value="Contrôle de stabilité">
+                        Contrôle de stabilité </label>
+
+                <label for="VitresElectriques2"> 
+                        <input type="checkbox" id="VitresElectriques2" name="VitresElectriques" value="Vitres électriques">
+                        Vitres électriques </label>
+
+                <label for="AssistanceAuStationnement2"> 
+                        <input type="checkbox" id="AssistanceAuStationnement2" name="AssistanceAuStationnement" value="Assistance au stationnement">
+                        Assistance au stationnement </label>
+
+            </span> 
+
+            <label for="url2">URL de L'image:
+                <input type="url" id="url2" name="URL" placeholder="Entrez le lien de l'image" required> </label>
+        </form>
+
+        <div class="fonctionalites" id="btnCreate">
+            <button>
+                Sauvegarder
+                <i class="fas fa-save"></i>
+            </button>
+            <button id="btnCancelCreate">
+                Annuler
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer> </script>
+</body>
+</html>
