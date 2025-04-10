@@ -1,141 +1,145 @@
-body > h1{
+:root {
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --bg: #f2f4f6;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
     text-align: center;
-}
-
-button,input,select{
-    border:none;
-    background:none;
-}
-
-i{
-    vertical-align: middle;
-}
-
-i:not([class*="fa-chevron"]){
-    margin-left:4px;
-}
-
-/* ############################ Partie 1 ############################################*/
-#partie1{
-    width:98%;
-    margin:auto;
-    display:flex;
-    flex-direction:row;
-    padding:2%;
-}
-
-/* subdivision partie 1*/
-#partie1 > div{
-    flex:1;
-    padding:2%;
-    max-width:50%;
-}
-
-/* ------------- Carousselle ---------------*/
-#carousselle div{
-    display:flex;
-}
-
-#carousselle div img{
-    flex:4;
-    height:auto;
-    max-width:80%;
-} 
-
-#carousselle div button{
-    flex:1;
-}
-
-#carousselle p{
+    color: var(--primary);
+    padding: 20px;
+  }
+  
+  button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0b5ed7;
+  }
+  
+  input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input[type="checkbox"] {
+    width: auto;
+  }
+  
+  #partie1 {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  #carousselle,
+  #infos {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    padding: 20px;
+    flex: 1 1 45%;
+  }
+  
+  #carousselle div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  #carousselle img {
+    max-width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  #carousselle p {
+    margin-top: 15px;
     text-align: center;
-}
-
-#carousselle p *:not(input){
-    display: inline-block;
-    width:20%;
-}
-/*-------------- infos ----------------*/ 
-
-
-/* fonctionalites */
-
-.fonctionalites{
+  }
+  
+  .fonctionalites {
     text-align: right;
-}
-
-.fonctionalites button{
-    padding:2%;
-    font-size: 1.1em;
-}
-
-#btnSaveChange,#btnCancelChange{
-    display: none; /* cacher */
-}
-
-/* formulaire */
-form{
-    padding:5%;
-}
-
-form > *{
-    display: inline-block;
-    vertical-align: top;
-    margin-top:10px;
-    margin-bottom:10px;
-}
-
-form > label:not([id="options"]){
-    width:47%;
-}
-
-form input:not([type="checkbox"]){
-    max-width: 50%;
-}
-
-form select{
-    max-width:40%;
-}
-
-/* les options */ 
-#options,#options2{
-    max-width: 10%;
-}
-
-form > span{
-    max-width: 30%;
-}
-
-form .special > label{
-   display:none;
-}
-
-/* les options aux moment des modification */
-.normal label{
-    display:block;
-}
-
-
-
-/* #################################### partie 2 ######################################## */
-
-#partie2{
-    display: none; /* cacher */
-    width:70%;
-    margin:auto;
-    position:absolute;
-    top:10%;
-    left:10%;
-    background-color: white;
-    border:1px solid black;
-    padding:5%;
-}
-
-@media (max-width:1000px){
-    #partie1{
-        flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  form > label {
+    flex: 1 1 48%;
+  }
+  
+  form .special,
+  form .normal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  form .special label,
+  form .normal label {
+    flex: 1 1 45%;
+  }
+  
+  #partie2 {
+    display: none;
+    width: 90%;
+    max-width: 800px;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  @media (max-width: 768px) {
+    #partie1 {
+      flex-direction: column;
     }
-
-    #partie1 div{
-        min-width:100%;
+  
+    #carousselle,
+    #infos {
+      flex: 1 1 100%;
     }
-}
+  
+    form > label {
+      flex: 1 1 100%;
+    }
+  }
+  
